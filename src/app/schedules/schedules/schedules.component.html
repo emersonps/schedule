@@ -1,0 +1,34 @@
+<mat-card>
+  <mat-toolbar color="primary">Aulas Agendadas</mat-toolbar>
+
+  <div *ngIf="schedules$ | async as schedules; else loading">
+    <table mat-table [dataSource]="schedules" class="mat-elevation-z8">
+      <!-- teacher Column -->
+      <ng-container matColumnDef="teacher">
+        <th mat-header-cell *matHeaderCellDef> Professor </th>
+        <td mat-cell *matCellDef="let schedule"> {{schedule.teacher}} </td>
+      </ng-container>
+
+      <!-- course Column -->
+      <ng-container matColumnDef="course">
+        <th mat-header-cell *matHeaderCellDef> Curso </th>
+        <td mat-cell *matCellDef="let schedule"> {{schedule.course}} </td>
+      </ng-container>
+
+      <!-- time Column -->
+      <ng-container matColumnDef="time">
+        <th mat-header-cell *matHeaderCellDef> Horário </th>
+        <td mat-cell *matCellDef="let schedule"> {{schedule.time}} </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+  </div>
+
+  <ng-template #loading>
+    <div class="loading-spiner">
+      <mat-spinner></mat-spinner>
+    </div>
+  </ng-template>
+</mat-card>
