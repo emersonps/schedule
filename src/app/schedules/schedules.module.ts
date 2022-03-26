@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 import { AppMaterialModule } from '../shared/app-material/app-material.module';
+import { SharedModule } from '../shared/shared.module';
 import { SchedulesRoutingModule } from './schedules-routing.module';
 import { SchedulesComponent } from './schedules/schedules.component';
 
@@ -15,7 +16,8 @@ import { SchedulesComponent } from './schedules/schedules.component';
     CommonModule,
     SchedulesRoutingModule,
     AppMaterialModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    SharedModule
   ]
 })
 export class SchedulesModule { }

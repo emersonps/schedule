@@ -5,19 +5,30 @@
     <table mat-table [dataSource]="schedules" class="mat-elevation-z8">
       <!-- teacher Column -->
       <ng-container matColumnDef="teacher">
-        <th mat-header-cell *matHeaderCellDef> Professor </th>
+        <th mat-header-cell *matHeaderCellDef> 
+          <span class="material-icons">history_edu</span>
+          Professor 
+        </th>
         <td mat-cell *matCellDef="let schedule"> {{schedule.teacher}} </td>
       </ng-container>
 
       <!-- course Column -->
       <ng-container matColumnDef="course">
-        <th mat-header-cell *matHeaderCellDef> Curso </th>
-        <td mat-cell *matCellDef="let schedule"> {{schedule.course}} </td>
+        <th mat-header-cell *matHeaderCellDef> 
+          <span class="material-icons">import_contacts</span> 
+          Curso
+        </th>
+        <td mat-cell *matCellDef="let schedule">
+          <mat-icon aria-hidden="false" aria-label="Example home icon">{{ schedule.course | category}}</mat-icon> {{schedule.course}}
+        </td>
       </ng-container>
 
       <!-- time Column -->
       <ng-container matColumnDef="time">
-        <th mat-header-cell *matHeaderCellDef> Horário </th>
+        <th mat-header-cell *matHeaderCellDef> 
+          <span class="material-icons">watch_later</span>
+          Horário 
+        </th>
         <td mat-cell *matCellDef="let schedule"> {{schedule.time}} </td>
       </ng-container>
 
