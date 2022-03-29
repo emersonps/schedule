@@ -13,8 +13,8 @@ import lombok.Data;
 
 @Data
 @Entity
-//@Table(name = "student")
-public class Student {
+//@Table(name = "schedule")
+public class Schedule {
     
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -22,11 +22,11 @@ public class Student {
     private Long id;
 
     @Column(length = 200, nullable = false)
-    private String name;
+    private String teacher;
 
     @Column(length = 80, nullable = false)
-    private String email;
+    private String course;
 
     @Column(length = 80, nullable = false)
-    private String password;
+    private String time;
 }

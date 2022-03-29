@@ -1,7 +1,10 @@
 package com.emerson;
 
-import com.emerson.model.Student;
-import com.emerson.repository.StudentRepository;
+import com.emerson.model.Schedule;
+import com.emerson.repository.ScheduleRepository;
+
+import com.emerson.model.Schedule;
+import com.emerson.repository.ScheduleRepository;
 
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -16,16 +19,23 @@ public class CrudSpringApplication {
 	}
 
 	@Bean
-	CommandLineRunner initDatabase(StudentRepository studentRepository) {
+	CommandLineRunner initDatabase(ScheduleRepository scheduleRepository) {
 		return args -> {
-			studentRepository.deleteAll();
+			scheduleRepository.deleteAll();
 
-			Student c = new Student();
-			c.setName("Emerson Pinjeiro");
-			c.setEmail("emerson@gmail.com");
-			c.setPassword("123456789");
+			Schedule s = new Schedule();
+			s.setTeacher("Emerson Pinheiro");
+			s.setCourse("HTML");
+			s.setTime("10/04/2022 10h00 à 20h00");
 
-			studentRepository.save(c);
+			scheduleRepository.save(s);
+
+			Schedule s1 = new Schedule();
+			s1.setTeacher("Emerson Pinheiro");
+			s1.setCourse("CSS");
+			s1.setTime("10/05/2022 10h00 à 20h00");
+
+			scheduleRepository.save(s1);
 		};
 	}
 }

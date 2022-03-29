@@ -12,17 +12,17 @@ import { SchedulesService } from '../services/schedules.service';
   styleUrls: ['./schedules.component.scss']
 })
 export class SchedulesComponent implements OnInit {
-  
+
   schedules$: Observable<Schedule[]>;
-  // schedules_data: Schedule[] = []; 
+  // schedules_data: Schedule[] = [];
   displayedColumns = ['teacher', 'course', 'time'];
 
   // schedulesService: SchedulesService;
 
   constructor(
     private schedulesService: SchedulesService,
-    public dialog: MatDialog    
-  ) { 
+    public dialog: MatDialog
+  ) {
     // this.schedulesService = new SchedulesService();
     this.schedules$ = this.schedulesService.list()
     .pipe(
@@ -30,9 +30,9 @@ export class SchedulesComponent implements OnInit {
         this.onError('Erro ao carregar cursos.');
         return of([])
       })
-    );  
+    );
     // this.schedulesService.list().subscribe(schedules_data => this.schedules_data = schedules_data)
-  } 
+  }
 
   onError(errorMsg: string) {
     this.dialog.open(ErrorDialogComponent, {

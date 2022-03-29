@@ -9,10 +9,10 @@ import { Schedule } from '../model/schedule';
 })
 export class SchedulesService {
 
-  private readonly API = '/assets/schedules.json';
+  private readonly API = '/api/schedules';
 
   constructor(private httpClient: HttpClient) { }
-  
+
   list(){
       return this.httpClient.get<Schedule[]>(this.API)
       .pipe(

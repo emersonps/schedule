@@ -2,8 +2,8 @@ package com.emerson.controller;
 
 import java.util.List;
 
-import com.emerson.model.Student;
-import com.emerson.repository.StudentRepository;
+import com.emerson.model.Schedule;
+import com.emerson.repository.ScheduleRepository;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -14,16 +14,16 @@ import org.springframework.web.bind.annotation.RestController;
 import lombok.AllArgsConstructor;
 
 @RestController
-@RequestMapping("/api/students")
+@RequestMapping("/api/schedules")
 @AllArgsConstructor
-public class StudentController {
+public class ScheduleController {
 
-    private final StudentRepository studentRepository;
+    private final ScheduleRepository scheduleRepository;
 
     //@RequestMapping(method = RequestMethod.GET)
     @GetMapping
-    public @ResponseBody List<Student> list() {
-        return studentRepository.findAll();
+    public @ResponseBody List<Schedule> list() {
+        return scheduleRepository.findAll();
     }
 
 }

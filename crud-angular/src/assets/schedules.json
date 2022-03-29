@@ -1,6 +1,6 @@
 [
-    {"_id": "1", "teacher": "Emerson", "course": "HTML", "time": "3 horas"},
-    {"_id": "2", "teacher": "Carlos", "course": "CSS", "time": "3 horas"},
-    {"_id": "3", "teacher": "Marcos", "course": "JS", "time": "5 horas"},
-    {"_id": "3", "teacher": "Marcos", "course": "PHP", "time": "8 horas"}
+    {"id": "1", "teacher": "Emerson", "course": "HTML", "time": "3 horas"},
+    {"id": "2", "teacher": "Carlos", "course": "CSS", "time": "3 horas"},
+    {"id": "3", "teacher": "Marcos", "course": "JS", "time": "5 horas"},
+    {"id": "3", "teacher": "Marcos", "course": "PHP", "time": "8 horas"}
 ]

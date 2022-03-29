@@ -1,5 +1,5 @@
 export interface Schedule {
-    _id: string; 
+    id: string;
     teacher: string;
     course: string;
     time: string;
